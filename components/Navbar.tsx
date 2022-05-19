@@ -1,5 +1,4 @@
 import { styled } from '../stitches.config';
-import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { LayoutGroup, motion } from 'framer-motion';
