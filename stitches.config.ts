@@ -28,7 +28,7 @@ export const {
     fonts: {
       body: 'Inter, sans-serif',
       code: 'Inter, monospace',
-      heading: 'Source Code Pro, sans-serif',
+      heading: 'Inter, sans-serif',
       logo: 'Source Code Pro, sans-serif'
     },
     space: {
@@ -148,8 +148,20 @@ const globalStyles = globalCss({
     },
     {
       fontFamily: 'Inter',
+      src: `url("/static/fonts/Inter-Medium.ttf") format("truetype")`,
+      fontWeight: 'medium',
+      fontStyle: 'normal'
+    },
+    {
+      fontFamily: 'Inter',
       src: `url("/static/fonts/Inter-Bold.ttf") format("truetype")`,
       fontWeight: 'bold',
+      fontStyle: 'normal'
+    },
+    {
+      fontFamily: 'Inter',
+      src: `url("/static/fonts/Inter-Black.ttf") format("truetype")`,
+      fontWeight: 800,
       fontStyle: 'normal'
     },
     {
