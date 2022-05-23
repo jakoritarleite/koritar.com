@@ -48,8 +48,16 @@ const Articles: Page<ArticlesProps> = props => {
       <h2>Articles</h2>
       {articles.map(article => {
         return (
-          <div key={article.slug}>
-            <Link href={`/articles/${article.slug}`}>
+          <div
+            style={{
+              opacity: '.8',
+              marginTop: '20px',
+              marginBottom: '25px',
+              fontSize: '18px'
+            }}
+            key={article.slug}
+          >
+            <Link style={{}} href={`/articles/${article.slug}`}>
               {article.frontmatter.title}
             </Link>
           </div>
