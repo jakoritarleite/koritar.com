@@ -33,6 +33,11 @@ export default function Navbar() {
       behaviour: ItemBehaviour.InternalPage
     },
     {
+      name: 'Uses',
+      path: '/uses',
+      behaviour: ItemBehaviour.InternalPage
+    },
+    {
       name: 'GitHub',
       path: 'https://github.com/jakoritarleite',
       behaviour: ItemBehaviour.ExternalLink
@@ -40,6 +45,11 @@ export default function Navbar() {
     {
       name: 'Twitter',
       path: 'https://twitter.com/koritarsa',
+      behaviour: ItemBehaviour.ExternalLink
+    },
+    {
+      name: 'Opensea',
+      path: 'https://opensea.io/koritarsa',
       behaviour: ItemBehaviour.ExternalLink
     }
   ];
@@ -86,7 +96,6 @@ export default function Navbar() {
           </List>
         </Nav>
 
-        {/* Download my Resume when click this btn */}
         <ExternalLink
           href="/static/files/resume.pdf"
           target="_blank"
