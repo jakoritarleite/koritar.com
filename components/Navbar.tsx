@@ -96,13 +96,16 @@ export default function Navbar() {
           </List>
         </Nav>
 
-        <ExternalLink
-          href="/static/files/resume.pdf"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <AsideButton>Resume ↓</AsideButton>
-        </ExternalLink>
+        <AsideButton>
+          <ExternalLink
+            href="/static/files/resume.pdf"
+            target="_blank"
+            rel="noreferrer"
+            css={{ color: 'white' }}
+          >
+            Resume ↓
+          </ExternalLink>
+        </AsideButton>
       </Header>
     </LayoutGroup>
   );
@@ -117,7 +120,8 @@ const Header = styled('header', {
   flexWrap: 'wrap',
   position: 'absolute',
   top: '0',
-  zIndex: '3'
+  zIndex: '3',
+  '@bp3': { paddingTop: '15px' }
 });
 
 const Logo = styled('div', {
@@ -136,6 +140,7 @@ const AsideButton = styled('div', {
   fontFamily: 'Inter',
   fontWeight: 'bold',
   fontSize: '17px',
+  marginLeft: 'auto',
   marginRight: '20px'
 });
 
@@ -154,6 +159,7 @@ const List = styled('ul', {
   listStyle: 'none',
   display: 'inline-flex',
   position: 'relative',
+  width: '800px',
   '@bp1': { justifyContent: 'space-around' }
 });
 
@@ -176,6 +182,7 @@ const NavItem = styled(motion.span, {
   fontWeight: 'bold',
   padding: '20px',
   textDecoration: 'none',
+  whiteSpace: 'nowrap',
   transition: 'color $duration ease-in-out',
   '&:hover': {
     color: 'white'
