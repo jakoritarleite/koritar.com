@@ -1,7 +1,9 @@
-import { styled } from '../stitches.config';
+import Head from 'next/head';
 import type { Page } from 'next';
 import baseLayout, { BaseProps } from '../components/layouts/base';
-import Head from 'next/head';
+import { Section } from '../components/Section';
+import { Container } from '../components/Container';
+import { Paragraph } from '../components/Paragraph';
 
 type AboutProps = BaseProps & {
   description: string;
@@ -77,11 +79,7 @@ const About: Page<AboutProps> = props => {
       </Head>
       <Container>
         <Section>
-          <Paragraph
-            css={{
-              marginTop: '25px'
-            }}
-          >
+          <Paragraph>
             <strong>Hey, I&apos;m João Koritar</strong>, I&apos;ve started in
             this world when I was 11yo by hacking some Android ROMs and apps
             because I wanted to install Android KitKat on my old tablet. After
@@ -105,7 +103,7 @@ const About: Page<AboutProps> = props => {
             My passions are <strong>decentralized technologies</strong>, open
             source, side projects, and everything that is related to
             technologies. On my free time I like to ride bike, go out with my
-            friend, and of course sleep.
+            friends, and of course play some games with my homies.
           </Paragraph>
         </Section>
       </Container>
@@ -114,25 +112,6 @@ const About: Page<AboutProps> = props => {
     </>
   );
 };
-
-const Container = styled('div', {
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'space-between',
-  '@bp2': { flexDirection: 'row' }
-});
-
-const Section = styled('div', {
-  marginTop: '0px',
-  width: 'auto',
-  fontWeight: 'normal',
-  lineHeight: '27px',
-  '@bp2': { width: '98%' }
-});
-
-const Paragraph = styled('p', {
-  '@bp2': { margin: '15px 0' }
-});
 
 About.getLayout = baseLayout;
 export default About;
