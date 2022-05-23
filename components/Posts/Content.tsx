@@ -1,4 +1,6 @@
 import { styled } from '../../stitches.config';
+import { Title } from './Title';
+import { Subtitle } from './Subtitle';
 
 export const Content = styled('div', {
   fontSize: '16px',
@@ -42,4 +44,22 @@ export const Content = styled('div', {
       marginLeft: 0
     }
   }
+});
+
+export const ContentTitle = styled(Title, {
+  color: '$primary',
+  margin: '90px auto 0',
+  maxWidth: 'none',
+  fontSize: '45px',
+  lineHeight: '60px',
+  textAlign: 'center',
+  '@bp2': {
+    marginTop: 0
+  }
+});
+
+export const ContentSubtitle = styled(Subtitle, {
+  color: '$secondary',
+  fontSize: '16px',
+  margin: '0 0 60px'
 });
