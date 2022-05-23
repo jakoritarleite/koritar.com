@@ -1,7 +1,12 @@
-import type { AppProps } from 'next/app';
+import { GetLayout, Page } from 'next';
+import { MyProps } from 'next/app';
+import type { ReactNode } from 'react';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
-}
+const MyApp = ({ Component, pageProps }: MyProps) => {
+  const getLayout: GetLayout =
+    Component.getLayout ?? ((page: ReactNode) => page);
+
+  return getLayout(<Component {...pageProps} />, pageProps);
+};
 
 export default MyApp;
