@@ -13,7 +13,6 @@ type ProjectsProps = BaseProps & {
 type Project = {
   name: string;
   description: string;
-  used_techs: Array<string>;
   repo_link: string;
 };
 
@@ -33,22 +32,35 @@ const Projects: Page<ProjectsProps> = props => {
   const projects: Array<Project> = [
     {
       name: 'blockchain',
-      description: 'Basic P2P blockchain implementation',
-      used_techs: ['Rust'],
+      description: 'Basic P2P blockchain implementation in Rust lang.',
       repo_link: 'https://github.com/jakoritarleite/blockchain'
     },
     {
       name: 'weird-pixels',
-      description: 'ERC-721 Contract of the Weird Pixel NFT collection',
-      used_techs: ['Solidity', 'Typescript'],
+      description: 'ERC-721 Contract of the Weird Pixel NFT collection.',
       repo_link: 'https://github.com/jakoritarleite/weird-pixels'
     },
     {
       name: 'marcys',
       description:
         'Monitor your VPN machine resources with this full stack project.',
-      used_techs: ['Rust'],
       repo_link: 'https://github.com/aprade/marcys'
+    },
+    {
+      name: 'svcontent-interface',
+      description:
+        'Web3 project where people can share visual visual stimulation content through the Solana Blockchain.',
+      repo_link: 'https://github.com/jakoritarleite/svcontent-interface'
+    },
+    {
+      name: 'nftiguess',
+      description: 'Web3 app to mint your own NFT collection.',
+      repo_link: 'https://github.com/jakoritarleite/nftiguess'
+    },
+    {
+      name: 'minigrep',
+      description: 'Mini clone of the grep(1) command in Rust.',
+      repo_link: 'https://github.com/jakoritarleite/minigrep'
     }
   ];
 
@@ -71,59 +83,22 @@ const Projects: Page<ProjectsProps> = props => {
         </Section>
       </Container>
       <h2>Projects</h2>
-      {/* TODO: CHANGE THE DESIGN OF THE PROJECT BLOCKS */}
       {projects.map((project, index) => {
         return (
-          <ProjectContainer key={index}>
-            <ProjectTitle>
-              <ProjectRepoLink href={project.repo_link}>
+          <div key={index}>
+            <h3>
+              <a style={{ textDecoration: 'none' }} href={project.repo_link}>
                 {project.name}
-              </ProjectRepoLink>
-            </ProjectTitle>
+              </a>
+              &nbsp;↗
+            </h3>
             <span>{project.description}</span>
-            <ProjectTechs>
-              {project.used_techs.map((tech, index) => {
-                return <ProjectTech key={index}>{tech}</ProjectTech>;
-              })}
-            </ProjectTechs>
-          </ProjectContainer>
+          </div>
         );
       })}
     </>
   );
 };
-
-const ProjectContainer = styled('div', {
-  background: 'rgba(255, 255, 255, .07)',
-  width: '100%',
-  marginBottom: '40px',
-  paddingInline: '25px',
-  borderRadius: '10px'
-});
-
-const ProjectTitle = styled('h3', {
-  paddingTop: '25px'
-});
-
-const ProjectRepoLink = styled('a', {
-  textDecoration: 'none',
-  border: 'none'
-});
-
-const ProjectTechs = styled('div', {
-  display: 'flex',
-  paddingTop: '20px',
-  paddingBottom: '25px'
-});
-
-const ProjectTech = styled('div', {
-  backgroundColor: '#383636',
-  paddingTop: '5px',
-  paddingBottom: '5px',
-  paddingInline: '10px',
-  borderRadius: '10px',
-  marginRight: '18px'
-});
 
 Projects.getLayout = baseLayout;
 export default Projects;
