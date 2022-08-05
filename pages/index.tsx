@@ -39,7 +39,7 @@ const Index: NextPage = () => {
                 - <span style={{ color: '#959595' }}>Spotify</span>
               </div>
             </div>
-            <Inspiration>Inspirated by Zeno Rocha</Inspiration>
+            <Inspiration>Inspired by Zeno Rocha</Inspiration>
           </Container>
         </Content>
       </Home>
