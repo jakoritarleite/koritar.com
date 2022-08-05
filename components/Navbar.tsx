@@ -18,6 +18,11 @@ export default function Navbar() {
   const router = useRouter();
   const navItems: Array<Item> = [
     {
+      name: 'Home',
+      path: '/',
+      behaviour: ItemBehaviour.InternalPage
+    },
+    {
       name: 'About',
       path: '/about',
       behaviour: ItemBehaviour.InternalPage
@@ -30,11 +35,6 @@ export default function Navbar() {
     {
       name: 'Articles',
       path: '/articles',
-      behaviour: ItemBehaviour.InternalPage
-    },
-    {
-      name: 'Uses',
-      path: '/uses',
       behaviour: ItemBehaviour.InternalPage
     },
     {

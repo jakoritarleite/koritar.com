@@ -39,6 +39,7 @@ const Index: NextPage = () => {
                 - <span style={{ color: '#959595' }}>Spotify</span>
               </div>
             </div>
+            <Inspiration>Inspirated by Zeno Rocha</Inspiration>
           </Container>
         </Content>
       </Home>
@@ -65,4 +66,8 @@ const Title = styled('h1', {
 const Job = styled('p', {
   fontWeight: 'medium',
   color: 'white'
+});
+
+const Inspiration = styled('p', {
+  alignSelf: 'bottom'
 });
